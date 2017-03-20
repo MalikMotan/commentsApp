@@ -1,0 +1,36 @@
+<md-dialog aria-label="Add a New Comment">
+	<form ng-cloak layout="column">
+		<div class="md-toolbar-tools">
+			<span class="popup">Add a comment</span>
+			<span class="spacer"></span>
+			<md-button class="md-icon-button" ng-click="cancel()">
+				<md-icon md-svg-icon="assets/images/ic_close.svg" aria-label="Close dialog" class="material-icons"></md-icon>
+			</md-button>
+		</div>
+		<md-divider></md-divider>
+		<md-dialog-content>
+			<div class="md-dialog-content squish">
+				<md-input-container class="md-block">
+					<label class="name">comment name</label>
+					<input ng-model="commentName" type="text">
+				</md-input-container>
+				<div class="space"></div>
+				<md-input-container class="md-block">
+					<label class="body">comment body</label>
+					<input ng-model="commentBody" type="text">
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label class="email">comment email</label>
+					<input ng-model="commentEmail" type="text" >
+				</md-input-container>
+			</div>
+			<md-divider></md-divider>
+		</md-dialog-content>
+
+		<md-dialog-actions>
+			<md-button ng-click="add()" class="md-accent md-raised beautify">
+				ADD COMMENT
+			</md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>

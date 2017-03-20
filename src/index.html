@@ -1,0 +1,88 @@
+<!doctype html>
+<html ng-app="commentsApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>commentsApp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp/serve,src}) styles/app.css -->
+    <!-- inject:css -->
+    <!-- css files will be automatically insert here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+
+<body class="bg">
+    <div ng-controller="MainController as main" ng-cloak="">
+        <md-toolbar layout="row" layout-align="center">
+            <span class="title">comments view</span>
+            <span class="spacer"></span>
+            <md-button class="md-fab md-mini md-accent align" aria-label="Add Comment" ng-click="showAddPopup($event)">
+                <md-icon md-svg-icon="assets/images/ic_add_white_24px.svg" class="material-icons"></md-icon>
+            </md-button>
+        </md-toolbar>
+        <md-content class="md-padding bg">
+            <span class="card-title">Comments List</span>
+            <md-card class="card ">
+                <md-input-container class="md-block search-container" flex="90">
+                    <label class="search">search comments </label>
+                    <input ng-model="search[filter]" type="text">
+                </md-input-container>
+            </md-card>
+            <div layout="row" class="toggle ">
+                <h5>search by id</h5>
+                <md-switch ng-model="state" ng-change="changeFilterTo(state)" aria-label="Toggle search filter" class="md-primary" ng-true-value="'email'" ng-false-value="'id'">
+                    <h5>search by email</h5>
+                </md-switch>
+            </div>
+            <div id="commentDiv">
+
+                </div>
+            <div ng-repeat="comment in comments| filter:search" class="pad">
+                
+                <span class="card-title">{{comment.name }} : {{comment.id}} </span>
+                <md-card class="card" layout="row" layout-margin>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span flex="85">{{comment.body}}</span>
+                            <div flex></div>
+                            <h4> <span class="md-raised md-primary adjust"  md-colors="background: light-blue" >{{comment.email}}</span></h4>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-actions layout="column">
+                        <div class="compress">
+                            <md-button class="md-icon-button" ng-click="showEditPopup($event, comment.name)" aria-label="edit comment">
+                                <md-icon md-svg-icon="assets/images/ic_edit.svg" class="material-icons resize"></md-icon>
+                            </md-button>
+                            <md-button class="md-icon-button" aria-label="delete comment" ng-click="DeleteData(comment)">
+                                <md-icon md-svg-icon="assets/images/ic_close.svg" class=" material-icons resize"></md-icon>
+                            </md-button>
+                        </div>
+                    </md-card-actions>
+                </md-card>
+            </div>
+        </md-content>
+    </div>
+    <!-- build:js(src) scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- run `gulp inject` to automatically populate bower script dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+    <!-- inject:js -->
+    <!-- js files will be automatically insert here -->
+    <!-- endinject -->
+    <!-- inject:partials -->
+    <!-- angular templates will be automatically converted in js and inserted here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+</body>
+
+</html>
