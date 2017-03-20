@@ -6,7 +6,6 @@
   },
   "scripts": {
     "test": "gulp test",
-    "postinstall": "gulp default"
     
   },
   "devDependencies": {
