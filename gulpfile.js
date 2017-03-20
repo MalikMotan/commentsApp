@@ -29,7 +29,7 @@ gulp.task('default', ['clean'], function () {
 });
 gulp.task('serveprod', function() {
   connect.server({
-    root: '/src',
+    root: '/',
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
