@@ -21,7 +21,7 @@ gulp.task('partials', function () {
     }))
     .pipe($.angularTemplatecache('templateCacheHtml.js', {
       module: 'commentsApp',
-      root: 'app'
+      root: '/'
     }))
     .pipe(gulp.dest(conf.paths.tmp + '/partials/'));
 });
