@@ -6,7 +6,7 @@
         .controller('MainController', MainController)
 
     /** @ngInject */
-    function MainController($mdDialog, $rootScope, $scope, $compile, $element, $filter, $http) {
+    function MainController($mdDialog, $rootScope, $scope, $compile, $http) {
         $scope.showAddPopup = function(ev) {
             $mdDialog.show({
                 controller: DialogController,
@@ -15,15 +15,9 @@
                 targetEvent: ev,
                 clickOutsideToClose: true
             })
-
         };
 
         $scope.showEditPopup = function(ev, comment) {
-            $scope.currentComment = {
-                name: 'john',
-                body: 'hello john',
-                email: 'yours@gmail.com'
-            };
             $mdDialog.show({
                 controller: DialogController,
                 templateUrl: './app/views/editDialog.tmpl.html',
@@ -31,51 +25,39 @@
                 targetEvent: ev,
                 clickOutsideToClose: true,
                 locals: {
-                    comment: comment,
-                    currentComment: $scope.currentComment
+                    comment: comment
 
                 }
-
             });
-
         };
 
-        //-------Setup the filter options
+        //----Setup the filter options-----
         $scope.filter = "id";
         $scope.search = {
             id: '',
             email: ''
         };
+
         $scope.changeFilterTo = function(pr) {
             $scope.filter = pr;
         };
-        //=================comment addition
-        var comment = {
-            id: '',
-            name: '',
-            email: '',
-            body: ''
-        };
-
 
         $scope.commentList = [];
 
-        //---------get API data
+        //----get API data----
         $http.get('http://jsonplaceholder.typicode.com/comments').then(function(response) {
             $scope.comments = response.data;
             $scope.size = $scope.commentList.length + 500;
-
-
         });
-        //-------Delete comment
+
+        //----Delete comment----
         $scope.DeleteData = function(com) {
             var _index = $scope.comments.indexOf(com);
             $scope.comments.splice(_index, 1);
             $scope.commentList.length = $scope.commentList.length - 1;
         }
 
-        //---------------------Dialog Controller---------------------------------------------------------
-
+        //----Dialogs Controller----
         function DialogController($scope, $mdDialog, $compile) {
             $scope.comList = [];
 
@@ -85,12 +67,11 @@
             };
 
             $scope.DelData = function(com) {
-                var _index = $scope.comments.indexOf(com);
-                $scope.comList.splice(_index, 1);
-            }
-
+                    var _index = $scope.comments.indexOf(com);
+                    $scope.comList.splice(_index, 1);
+                }
+                //----add comment----
             $scope.add = function() {
-
                 var ID = Math.floor(Math.random() * (550 - 501 + 1)) + 501;
                 var _com = {
                     id: ID,
@@ -98,6 +79,7 @@
                     body: $scope.commentBody,
                     email: $scope.commentEmail
                 };
+
                 $scope.newsize = $scope.newsize + 1;
                 console.log($scope.ids);
                 $scope.comList.push(_com);
@@ -126,20 +108,18 @@
                     '</div>')($scope.$new());
                 divElement.append(appendHtml);
                 closeDialog();
-
             }
 
             function closeDialog() {
                 $mdDialog.hide("finished");
-
             }
 
             $scope.editComment = function() {
-                console.log(comment);
+                $scope.comment.name = $scope.editCommentName;
+                $scope.comment.body = $scope.editCommentBody;
+                $scope.comment.email = $scope.editCommentEmail;
                 closeDialog();
             }
-
         }
-
     }
 })();

@@ -1,7 +1,7 @@
-(function () {
-	'use strict';
+(function() {
+    'use strict';
 
-	angular
-		.module('commentsApp', ['ngAria', 'ngResource', 'ngMaterial']);
+    angular
+        .module('commentsApp', ['ngAria', 'ngResource', 'ngMaterial']);
 
 })();

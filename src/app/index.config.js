@@ -1,15 +1,15 @@
-(function () {
-	'use strict';
+(function() {
+    'use strict';
 
-	angular
-		.module('commentsApp')
-		.config(config);
+    angular
+        .module('commentsApp')
+        .config(config);
 
-	/** @ngInject */
-	function config($logProvider) {
-		// Enable log
-		$logProvider.debugEnabled(true);
+    /** @ngInject */
+    function config($logProvider) {
+        // Enable log
+        $logProvider.debugEnabled(true);
 
-	}
+    }
 
 })();

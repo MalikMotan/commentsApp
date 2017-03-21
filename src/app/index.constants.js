@@ -1,8 +1,8 @@
 /* global malarkey:false, moment:false */
-(function () {
-	'use strict';
+(function() {
+    'use strict';
 
-	angular
-		.module('commentsApp')
+    angular
+        .module('commentsApp')
 
 })();

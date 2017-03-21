@@ -42,11 +42,9 @@
                     <h5>search by email</h5>
                 </md-switch>
             </div>
-            <div id="commentDiv">
-
-                </div>
             <div ng-repeat="comment in comments| filter:search" class="pad">
-                
+             <div id="commentDiv">
+            </div>
                 <span class="card-title">{{comment.name }} : {{comment.id}} </span>
                 <md-card class="card" layout="row" layout-margin>
                     <md-card-title>

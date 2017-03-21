@@ -6,62 +6,49 @@
 // bower:scss
 // endbower
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
-@font-face
-{
+@font-face {
     font-family: 'Material Icons';
     font-weight: 400;
     font-style: normal;
-
     src: url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.eot);
     /* For IE6-8 */
     src: local('Material Icons'), local('MaterialIcons-Regular'), url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff2) format('woff2'), url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff) format('woff'), url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.ttf) format('truetype');
 }
 
-.title
-{
+.title {
     font-family: 'Roboto';
     font-size: 36px;
-
     padding-left: 10px;
-
     color: white;
 }
 
-.spacer
-{
+.spacer {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
-.align
-{
+.align {
     position: absolute;
     top: 18px;
     right: 20px;
-
     margin-top: 25px;
 }
 
-.material-icons
-{
+.material-icons {
     font-family: 'Material Icons';
     font-size: 24px;
     font-weight: normal;
     font-style: normal;
     line-height: 1;
     /* Preferred icon size */
-
     display: inline-block;
-
     width: 1em;
     height: 1em;
-
     letter-spacing: normal;
     text-transform: none;
     word-wrap: normal;
     /* Support for all WebKit browsers. */
-
     -webkit-font-smoothing: antialiased;
     /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
@@ -71,134 +58,111 @@
     font-feature-settings: 'liga';
 }
 
-html
-{
+html {
     font-family: 'Roboto Slab', serif;
 }
 
-[layout=row]
-{
+[layout=row] {
     flex-direction: row;
 }
 
-.beautify
-{
+.beautify {
     font-family: 'Roboto';
-
     margin: 20px;
     padding-right: 25px;
     padding-left: 25px;
 }
 
-.popup
-{
+.popup {
     font-family: 'Roboto';
     font-size: 28px;
     font-weight: 100;
-
     padding-right: 140px;
     padding-left: 5px;
 }
 
-.email
-{
+.email {
     font-family: 'Roboto';
     padding-bottom: 15px;
     color: lightgrey;
 }
-.adjust
-{
+
+.adjust {
     font-family: 'Roboto';
     font-size: 16px!important;
     font-weight: 600;
     background-color: #1e90ff!important;
-    color:white;
+    color: white;
     padding-left: 5px;
-	padding-right: 5px;
+    padding-right: 5px;
+}
 
+h4 {
+    text-align: left;
+}
 
+.pad {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-h4{
-	   text-align: left; 
-}
-.pad{
-	padding-top:10px;
-	padding-bottom: 10px;
-}
-.body
-{
+
+.body {
     padding-top: 40px;
-
     color: grey;
-
     @extend .email;
 }
 
-.squish
-{
+.squish {
     padding-bottom: 0 !important;
 }
 
-.resize
-{
+.resize {
     width: 16px;
     height: 16px;
 }
 
-.space
-{
+.space {
     height: 35px;
 }
 
-.name
-{
+.name {
     color: grey;
-
     @extend .email;
 }
 
-.bg
-{
+.bg {
     background-color: lightgray;
 }
 
-.card
-{
+.card {
     margin-top: 10px;
     margin-right: 150px;
     margin-bottom: 10px;
     margin-left: 80px;
 }
 
-.card-title
-{
+.card-title {
     font-family: 'Roboto';
     font-size: 28px;
-	padding-bottom: 10px;
+    padding-bottom: 10px;
     margin-left: 80px;
 }
 
-.search
-{
+.search {
     font-family: 'Roboto';
     font-size: 16px;
-
     padding-bottom: 5px;
     padding-left: 10px !important;
 }
 
-.search-container
-{
+.search-container {
     margin-bottom: 0 !important;
 }
 
-.toggle
-{
+.toggle {
     padding-left: 80px;
-    h5
-    {
+    h5 {
         font-family: 'Roboto';
-
         padding-right: 5px;
     }
 }
